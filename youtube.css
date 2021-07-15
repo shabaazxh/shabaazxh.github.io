@@ -1,0 +1,139 @@
+/* Init */
+*{
+	box-sizing: border-box;	
+}
+html{
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+	font-size: 1rem;
+	font-family: 'Lato', sans-serif;
+	background-color: #fcfcfc;
+}
+img{
+	max-width: 100%;
+}
+
+video{
+	max-width: 100%;
+	box-shadow: 0 5px 5px -5px rgba(1,19,53,.2), 0 10px 10px -5px rgba(1,19,53,.2), 0 20px 20px -5px rgba(1,19,53,.2), 0 40px 40px -5px rgba(1,19,53,.2);
+}
+
+/* Navigation */
+h1{
+	margin: 0;
+}
+.container-nav{
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-title{
+	margin: .5em 0;
+	color: #151c22;
+}
+header{
+	padding: 2em;
+	/*background-color: #fff;*/
+	transition: all 1s;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li{
+	margin-left: 2em;
+
+}
+
+nav a{
+	text-decoration: none;
+	color: #151c22;
+	font-weight: 700;
+	padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus{
+	color: #1262fb;
+
+}
+
+/* Navigation bar container */
+.container{
+	max-width: 900px;
+	width: 90%;
+	margin: 0 auto;
+	/*border: 2px solid magenta;*/
+}
+
+/* Typography */
+
+
+/* Content */ 
+
+section{
+	padding: 45px;
+}
+
+
+/* Banner settings */
+.title-banner{
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.information
+{
+	max-width: 900px;
+	width: 100%;
+	padding: 25px;
+	margin: 2em auto;
+	background-color: #efefef;
+}
+
+
+
+/* Handle mobile layout */
+@media only screen and (max-width: 600px)
+{
+	.container-menu{
+		flex-direction: column;
+	}
+
+	.menu
+	{
+		margin: .5em 0;
+		width: 100%;
+	}
+	.title-banner{
+
+	}
+	header{
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+	nav li{
+		margin: .5em 0;
+	}
+
+	nav a{
+		font-size: 1.3em;
+	}
+
+	.container-nav{
+		flex-direction: column;
+	}
+
+}

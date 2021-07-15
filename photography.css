@@ -1,0 +1,156 @@
+/* Init */
+*{
+	box-sizing: border-box;	
+}
+html{
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body{
+	margin: 0;
+	font-size: 1rem;
+	font-family: 'Lato', sans-serif;
+	background-color: #fcfcfc;
+}
+img{
+	max-width: 100%;
+}
+
+/* Navigation */
+h1{
+	margin: 0;
+}
+.container-nav{
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-title{
+	margin: .5em 0;
+	color: #151c22;
+}
+header{
+	padding: 2em;
+	/*background-color: #fff;*/
+	transition: all 1s;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+nav li{
+	margin-left: 2em;
+
+}
+
+nav a{
+	text-decoration: none;
+	color: #151c22;
+	font-weight: 700;
+	padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus{
+	color: #1262fb;
+
+}
+
+/* Navigation bar container */
+.container{
+	max-width: 900px;
+	width: 90%;
+	margin: 0 auto;
+	/*border: 2px solid magenta;*/
+}
+
+/* Typography */
+
+
+/* Content */ 
+
+section{
+	padding: 45px;
+}
+
+.menu{
+	width: 100%;
+	display: grid;
+	transition: all .5s;
+}
+
+.menu img{
+	align-self: end;
+}
+
+
+.menu:hover{
+	transform: scale(1.05);
+}
+/* Images grid */
+.container-grid
+{
+	display: flex;
+	max-width: 100%;
+	width: 90%;
+	margin: 1em auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1rem 1rem;
+}
+
+/* Banner settings */
+.title-banner{
+	max-width: 1630px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* Container for photography images */
+.container-menu{
+	display: flex;
+	justify-content: space-around;	
+
+}
+
+
+/* Handle mobile layout */
+@media only screen and (max-width: 600px)
+{
+	.container-menu{
+		flex-direction: column;
+	}
+
+	.menu
+	{
+		margin: .5em 0;
+		width: 100%;
+	}
+	.title-banner{
+
+	}
+	header{
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+	nav li{
+		margin: .5em 0;
+	}
+
+	nav a{
+		font-size: 1.3em;
+	}
+
+	.container-nav{
+		flex-direction: column;
+	}
+
+}
