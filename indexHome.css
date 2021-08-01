@@ -29,7 +29,6 @@ h1{
 .site-title{
 	margin: .5em 0;
 	color: #151c22;
-	padding-left: 1em;
 }
 header{
 	animation: 3s ease-out 0s 1 slideInHeader;
@@ -67,7 +66,6 @@ nav ul{
 
 nav li{
 	margin-left: 2em;
-
 }
 
 nav a{
@@ -117,8 +115,14 @@ nav a:focus{
 	color: #1262fb;	
 }
 
+
 /* Typography */
 
+.more-link {
+	text-decoration: none;
+	color: #1262fb;	
+	transition: all .5s ease;
+}
 
 /* Content */ 
 
@@ -168,20 +172,29 @@ section{
 }
 
 .container-news-feature{
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .container-news{
+	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 10px;	
+	grid-gap: 3vw;	
 	background-color: #fcfcfc;
 	color: #151c22;
 }
 
 .news-image{
-	transform: scale(0.9);
-	transition: all .5s;
+	z-index: 1;
+	width: 100%;
+	background-size: cover;
+	transition: all .5s ease;
+}
+
+.news-image img {
+	width: 100%;
+
 }
 
 .news-image:hover,
@@ -210,15 +223,91 @@ section{
 
 }
 
+.section-two{
+	animation: 3s ease-out 0s 1 slideIn;
+	margin-top: .3em;
+	color: #fff;
+}
+
+
+/* Section three */
+.container-news-feature-three{
+	animation: 3s ease-in 0s 1 slideIn;
+	max-width: 90%;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.container-news-three{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 3vw;	
+	background-color: #fcfcfc;
+	color: #151c22;
+	margin: 0 auto;
+	background-color: #f1f5f9;
+}
+
+.news-image-three{
+	transform: scale(0.9);
+	transition: all .5s;
+}
+
+.news-image-three:hover,
+.news-image-three:focus{
+	cursor: pointer;
+	transform: scale(0.95);
+	opacity: .98;
+}
+
+.news-text-three{
+	display: block;
+	padding-top: 1em;
+	max-width: 100%;
+}
+
+.news-text-three h1 {
+	width: 64%;
+	font-weight: 100;
+	color: black;
+	letter-spacing: .1em;
+}
+
+.news-text-three h4{
+	color: #666c71;
+}
+
+
 /* Media Queries*/
 
 
 /** Mobile devices */	
 @media only screen and (max-width: 600px)
 {
+	header{
+		text-align: center;
+	}
+
+	nav ul {
+		text-align: center;
+		width: 100%;
+	}
+
+	nav li{
+		width: 50%;
+		/*padding: 3px;*/
+		margin: 0 1em;
+	}
+
+	nav a{
+		font-size: 1.3em;
+	}
+
 	.container-menu{
 		flex-direction: column;
 	}
+
 	.menu{
 		margin: .5em 0;
 		width: 100%;
@@ -234,25 +323,14 @@ section{
 		max-width: 100%;
 	}
 
-	header{
-		text-align: center;
-	}
-
-	nav ul{
-		flex-direction: column;
-	}
-	nav li{
-		margin: .5em 0;
-	}
-
-	nav a{
-		font-size: 1.3em;
-	}
-
 	.container-nav{
 		flex-direction: column;
 	}
-	
+
+	.container-news-three {
+		display: block;
+		width: 100%;
+	}
 }
 
 

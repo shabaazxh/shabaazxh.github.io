@@ -91,15 +91,15 @@ nav a:focus{
 
 /* Content */
 
+section {
+	animation: 2s ease-out 0s 1 slideIn;
+	padding: 45px;
+}
+
 .container {
 	max-width: 100%;
 	width: 90%;
 	margin:  0 auto;
-}
-
-section {
-	animation: 2s ease-out 0s 1 slideIn;
-	padding: 45px;
 }
 
 .content-one img{
@@ -209,8 +209,39 @@ section {
 
 /* Mobile devie */
 
-@media only screen and (max-width:  600px)
+@media only screen and (max-width: 600px)
 {
+	header{
+		text-align: center;
+	}
+	nav {
+		padding-right: 20px;
+	}
+	nav ul {
+		text-align: center;
+		width: 100%;
+	}
+
+	nav li{
+		width: 50%;
+	}
+
+	nav a{
+		font-size: 1.3em;
+	}
+
+	.container {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.container-nav{
+		flex-direction: column;
+	}
+
+	.image-info {
+		padding-left: 1.3em;
+	}
 	.container-menu{
 		flex-direction: column;
 	}

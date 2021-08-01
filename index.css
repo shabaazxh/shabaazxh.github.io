@@ -216,6 +216,26 @@ section{
 /** Mobile devices */	
 @media only screen and (max-width: 600px)
 {
+	header{
+		text-align: center;
+	}
+	nav ul {
+		text-align: center;
+		width: 100%;
+	}
+
+	nav li{
+		width: 50%;
+		border-radius: 6px;
+		background-color: black;
+		padding: 3px;
+	}
+
+	nav a{
+		color: white;
+		font-size: 1.3em;
+	}
+
 	.container-menu{
 		flex-direction: column;
 	}
@@ -232,21 +252,6 @@ section{
 	.news-text{
 		padding: 2em;
 		max-width: 100%;
-	}
-
-	header{
-		text-align: center;
-	}
-
-	nav ul{
-		flex-direction: column;
-	}
-	nav li{
-		margin: .5em 0;
-	}
-
-	nav a{
-		font-size: 1.3em;
 	}
 
 	.container-nav{

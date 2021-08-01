@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Shabaaz | Databases</title>
+	<link rel="stylesheet" type="text/css" href="database.css">
+	<link rel="shortcut icon" href="media/logo.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header>
+	<div class="container container-nav">
+		<div class="site-title" id="owner-title">
+			<h1>Shabaaz</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="opengl.html">CG</a></li>
+				<li><a href="ml.html">ML&DM</a></li>
+				<li><a href="https://www.youtube.com/channel/UCrET62x8Qpk7nY_S3QBmBzQ?view_as=subscriber">Github</a></li>
+			</ul>
+		</nav>
+</div> <!-- /.container-->
+</header>
+
+<section class="section-one">
+	<div class="container">
+		<div class="content-one">
+			<h1 class="section-title"> FoodForYou - Database Design </h1>
+			<div class="image-container">
+				<img src ="media/database/foodforyou_partA.png">
+			</div>
+			<div class="image-info">
+				<h1> Conceptual ERD for Online Shopping </h1>
+				<h4 style="color:#A9A9A9"> Conceptual ERD </h4>
+
+				<p> This is a conceptual ERD for an online shopping service known as <strong>FOODFORYOU</strong>. The purpose of a conceptual ERD is to identify the relationships between entities at a high-level. </p>
+
+				<p>The online store allows you to add items to your basket, where each basket represents items you want from a specific store. You will then confirm the basket and have the items delivered to you.</p>
+				
+				<p> The goal with this conceptual diagram is to model and provide a good high-level representation of how this particular service would work and demonstrate this through the use of entities, multiplicities and generalisation/specialisations to break down the entities to better represent the data and the information they contain. A high-level representation of a database model, can make it easy for those with little to no experience with database programming to understand how this particular database might work and look</p>
+			</div>
+
+			<div class="image-container">
+				<img src ="media/database/foodforyou_logical.png">
+			</div>
+			<div class="image-info">
+				<h1> Logical ERD for Online Shopping </h1>
+				<h4 style="color:#A9A9A9"> Logical ERD </h4>
+				<p> Logical ERD Mapping for an online shopping service (<strong>FOODFORYOU</strong>). Once we are comfortable with our conceptual representation of the database model, we can begin mapping the database to a Logical ERD. The purpose of a Logical ERD is to more accuraretly represent the relationships between entities in order to better represent how entities will interact with each other. One of the ways we can better represent the relationships between entities is by introducing and implementing the foreign key contrainsts within the entities which will help demonstrate how entities will interact with each other </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- SECTION TWO -->
+<section class="section-one">
+	<div class="container">
+		<div class="content-one">
+			<h1 class="section-title"> Futuro Careers - Database Design </h1>
+			<div class="image-container">
+				<img src ="media/database/job.png">
+			</div>
+			<div class="image-info">
+				<h1> Mapping Conceptual to Logical </h1>
+				<h4 style="color:#A9A9A9"> Logical ERD </h4>
+
+				<p> This is a conceptual ERD for a careers and professional development service known as <strong>Futuro</strong>. The company aims to provide guidance and advice to students who use the service to find employment opportunities. </p>
+
+				<p> In this particular task, the conceptual ERD was already provided by Futuro. My job was to map this conceptual ERD to a high-quality Logical Entity Relationship Diagaram (ERD) to logically represent how the key business  data would be organised as a set of interrelated tables that can later be implemented </p>
+				
+			</div>
+
+			<div class="image-container">
+				<img src ="media/database/logo.png">
+			</div>
+			<div class="image-info">
+				<h1> MySQL Implementation & Querying </h1>
+				<h4 style="color:#A9A9A9"> MySQl </h4>
+
+				<p> The next task required the implementation of the Company, Staff and Offer tables using MySQL and to fill these tables with records to demonstrate the implementation of these particular tables</p>
+
+				<h2> Creating the tables </h2>
+				<pre>
+DROP TABLE IF EXISTS company;
+DROP TABLE IF EXISTS staff;
+DROP TABLE IF EXISTS offer;
+
+
+CREATE TABLE company
+(
+	compCode		INT(3) unique not null,
+	compName		VARCHAR(30) not null,
+	compDescrip 		VARCHAR(30) not null,
+	constraint 		comp_PK PRIMARY KEY (compCode)
+);
+
+
+CREATE TABLE staff
+(
+	staffID			INT(4) unique not null,
+	staffFullName   	VARCHAR(40) not null,
+	staffPosition		VARCHAR(20) not null,
+	staffEmail		VARCHAR(50) not null unique,
+	compCode		INT(3) not null,
+	constraint 		staff_PK PRIMARY KEY (staffID),
+	constraint 		staffcomp_FK FOREIGN KEY (compCode)
+	references 		company(compCode)
+);
+
+
+CREATE TABLE offer
+(
+	offerCode		INT(4) unique not null,
+	offerName 		VARCHAR(30) not null,
+	offerDescrip 		VARCHAR(80) not null,
+	offerDeadline		DATE not null,
+	offerStartDate		DATE not null,
+	compCode		INT(3) not null,
+	constraint 		offer_PK PRIMARY KEY (offerCode),
+	constraint 		offercomp_FK FOREIGN KEY (compCode)
+	references 		company(compCode)
+);
+				</pre>
+
+				<h2> 1.1 - Inserting Records into the tables </h2>
+
+				<pre>
+INSERT INTO
+company (compCode, compName, compDescrip)
+VALUES
+(100, 'AppleJuiceTechnologies', 'We strive to make a difference'),
+(101, 'BerryTech', 'Be apart of change'),
+(102, 'Cyberbase', 'We do security');
+
+INSERT INTO
+staff   (staffID, staffFullName, staffPosition, staffEmail, compCode)
+VALUES
+(5001, 'Jason Mill', 'Programmer', 'jason@mail.com', 100),
+(5002, 'Michael Tale','IT Tester', 'mictale@mail.com', 102),
+(5003, 'Sally Queen', 'Database Architect','salls@mail.com', 101),
+(5004, 'Mark Smart', 'Operations Manager', 'markssmart@mail.com', 100);
+
+
+INSERT INTO
+offer (offerCode, offerName, offerDescrip, offerDeadline, offerStartDate, compCode)
+VALUES
+(9001, 'Sales Assistant', 'Full-Time - Build the customer sales experience',  '2020-12-01', '2020-12-12', 100),
+(9002, 'Programmer', 	  'Full-Time - Maintain current software',  '2020-11-20', '2020-11-22', 101),
+(9003, 'Marketing Manager','Full-Time - Manage the marketing team', '2020-11-15', '2020-11-25', 102),
+(9004, 'IT Tester',        'Full-Time - Skilled in testing computer software', '2020-11-12', '2020-12-03', 101),
+(9005, 'Sales Rep',        'Full-Time - Build customer sales experience', '2020-11-28', '2020-12-05', 102);
+
+				</pre>
+				<p> Once the tables had been created and filled with relevant data. It was important to demonstrate the power of the database based on it's current implementation by writing some useful SQL queries that would retrieve useful information for us from the database</p>
+
+				<h2> 1.2 - Demonstrating some SQL queries that can be used to retrieve information from the created tables </h2>
+
+				<p> <strong>1.</strong> <i>Retrieve a list of company codes & company names and for each company the number of staff that they employ, making sure the header shows the number of employees in each company as "Number of staff"</i>
+
+				<pre>
+SELECT c.compCode, c.compName, COUNT(compCode) AS "Number of Staff"
+FROM company c JOIN staff s
+ON c.compCode = s.compCode
+GROUP BY c.compCode;
+				</pre>
+
+
+				<p> <strong>2.</strong> <i> SQL query to display a list of company names along with the names and positions of staff they employ and the names and descriptions od the offers they propose.</i>
+
+				<pre>
+SELECT c.compName, s.staffFullName, s.staffPosition, o.offerName, o.offerDescrip
+FROM company c JOIN staff s
+ON c.compCode = s.compCode
+JOIN offer o
+ON o.compCode = c.compCode;
+				</pre>
+
+			</div>
+		</div>
+	</div>
+</section>

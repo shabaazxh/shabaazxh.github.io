@@ -131,18 +131,23 @@ section{
 		margin: .5em 0;
 		width: 100%;
 	}
-	.title-banner{
-
-	}
+	
 	header{
 		text-align: center;
 	}
 
-	nav ul{
-		flex-direction: column;
+	nav {
+		padding-right: 20px;
 	}
+
+	nav ul {
+		text-align: center;
+		width: 100%;
+	}
+
 	nav li{
-		margin: .5em 0;
+		width: 50%;
+		/*padding: 3px;*/
 	}
 
 	nav a{

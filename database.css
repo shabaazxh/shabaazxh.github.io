@@ -1,0 +1,212 @@
+*{
+	box-sizing: border-box;	
+}
+html{
+	font-size: 16px;
+	scroll-behavior: smooth;
+	font-family:'Helvetica Neue',sans-serif;
+}
+
+body{
+	margin: 0;
+	font-size: 1rem;
+	font-family: 'Lato', sans-serif;
+	background-color: #fcfcfc;
+}
+img{
+	max-width: 100%;
+}
+
+/* Navigation */
+h1{
+	margin: 0;
+}
+.container-nav{
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-title{
+	margin: .5em 0;
+	color: #151c22;
+	padding-left: 1em;
+}
+header{
+	padding: 2em;
+	/*background-color: #fff;*/
+	transition: all 1s;
+}
+
+nav {
+	max-width: 100%;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;;
+}
+
+nav li{
+	margin-left: 2em;
+}
+
+nav a{
+	text-decoration: none;
+	color: #151c22;
+	font-weight: 700;
+	padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus{
+	color: #1262fb;
+
+}
+
+/* Animations */
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(50%);
+		opacity: 0%;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 100%;
+		
+	}
+}
+
+.current-page{
+	border-bottom: 1px solid #1262fb;
+	color: #1262fb;
+}
+
+.current-page:hover{
+	color: #1262fb;	
+}
+
+/* Typography */
+
+
+/* Content */
+
+section {
+	animation: 2s ease-out 0s 1 slideIn;
+	padding: 45px;
+}
+
+.container {
+	max-width: 70%;
+	width: 70%;
+	margin: 0 auto;
+}
+.image-container {
+	width: 50%;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.content-one img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.content-one p{
+	line-height: 1.6;
+	color: #666c71;
+	font-weight: 400;
+}
+
+.content-one{
+	grid-template-columns: 1fr;
+	background-color: #fcfcfc;
+	color: #151c22;
+	max-width: 100%;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.image-info{
+	display: block;
+	padding: 0 2em;
+	max-width: 75%;
+	width: 100%;
+	padding-top: 3em;
+	margin:  0 auto;
+}
+
+.section-title{
+	padding-bottom: 1em;
+	font-size: 2rem;
+	color: #151c22;
+	line-height: 1.2;
+	width: 50%;
+	margin-left: 25%;
+
+}
+
+.task {
+	color: #151c22;
+}
+
+
+
+/** Mobile devices */	
+@media only screen and (max-width: 600px)
+{
+	header{
+		text-align: center;
+	}
+	nav {
+		padding-right: 20px;
+	}
+
+	nav ul {
+		text-align: center;
+		width: 100%;
+	}
+
+	nav li{
+		width: 50%;
+		padding: 3px;
+		
+	}
+
+	nav a{
+		font-size: 1.3em;
+	}
+
+	section {
+		padding: 5px;
+	}
+
+	.container {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.container-nav{
+		flex-direction: column;
+	}
+
+	.content-one {
+		width: 100%;
+	}
+
+	.image-container {
+		width: 100%;
+	}
+	.image-info {
+		padding-left: 1.3em;
+		max-width: 100%;
+	}	
+	.section-title{
+		font-size: 1.5rem;
+		width: 100%;
+		margin-left: 0%;
+
+	}
+}
