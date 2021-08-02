@@ -84,7 +84,7 @@
 
 				<h2> Creating the tables </h2>
 				<pre>
-DROP TABLE IF EXISTS company;
+<p>DROP TABLE IF EXISTS company;
 DROP TABLE IF EXISTS staff;
 DROP TABLE IF EXISTS offer;
 
@@ -122,13 +122,13 @@ CREATE TABLE offer
 	constraint 		offer_PK PRIMARY KEY (offerCode),
 	constraint 		offercomp_FK FOREIGN KEY (compCode)
 	references 		company(compCode)
-);
+);</p>
 				</pre>
 
 				<h2> 1.1 - Inserting Records into the tables </h2>
 
 				<pre>
-INSERT INTO
+<p>INSERT INTO
 company (compCode, compName, compDescrip)
 VALUES
 (100, 'AppleJuiceTechnologies', 'We strive to make a difference'),
@@ -151,7 +151,7 @@ VALUES
 (9002, 'Programmer', 	  'Full-Time - Maintain current software',  '2020-11-20', '2020-11-22', 101),
 (9003, 'Marketing Manager','Full-Time - Manage the marketing team', '2020-11-15', '2020-11-25', 102),
 (9004, 'IT Tester',        'Full-Time - Skilled in testing computer software', '2020-11-12', '2020-12-03', 101),
-(9005, 'Sales Rep',        'Full-Time - Build customer sales experience', '2020-11-28', '2020-12-05', 102);
+(9005, 'Sales Rep',        'Full-Time - Build customer sales experience', '2020-11-28', '2020-12-05', 102); </p>
 
 				</pre>
 				<p> Once the tables had been created and filled with relevant data. It was important to demonstrate the power of the database based on it's current implementation by writing some useful SQL queries that would retrieve useful information for us from the database</p>

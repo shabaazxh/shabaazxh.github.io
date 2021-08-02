@@ -304,6 +304,10 @@ section{
 		font-size: 1.3em;
 	}
 
+	section {
+		padding: 10px;
+	}
+
 	.container-menu{
 		flex-direction: column;
 	}
