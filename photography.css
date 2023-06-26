@@ -29,10 +29,11 @@ h1{
 .site-title{
 	margin: .5em 0;
 	color: #151c22;
+	text-align: left;
+	align-self: flex-start;
 }
 header{
-	padding: 2em;
-	/*background-color: #fff;*/
+	padding: 1em;
 	transition: all 1s;
 }
 
@@ -63,7 +64,7 @@ nav a:focus{
 
 /* Navigation bar container */
 .container{
-	max-width: 900px;
+	/*max-width: 900px;*/
 	width: 90%;
 	margin: 0 auto;
 	/*border: 2px solid magenta;*/
@@ -75,7 +76,7 @@ nav a:focus{
 /* Content */ 
 
 section{
-	padding: 45px;
+	padding: 5px;
 }
 
 .menu{
@@ -90,14 +91,14 @@ section{
 
 
 .menu:hover{
-	transform: scale(1.05);
+	transform: scale(1.01);
 }
 /* Images grid */
 .container-grid
 {
 	display: flex;
 	max-width: 100%;
-	width: 90%;
+	width: 100%;
 	margin: 1em auto;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -106,8 +107,19 @@ section{
 
 /* Banner settings */
 .title-banner{
-	max-width: 1630px;
+/*	max-width: 100%;
 	width: 100%;
+	margin: 0 auto;
+	background-color: black;*/
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+.title-banner img {
+	display: block;
 	margin: 0 auto;
 }
 
@@ -125,15 +137,10 @@ section{
 	.container-menu{
 		flex-direction: column;
 	}
-
-	.menu
-	{
-		margin: .5em 0;
-		width: 100%;
-	}
 	
 	header{
 		text-align: center;
+		width: 100%;
 	}
 
 	nav {
@@ -155,7 +162,26 @@ section{
 	}
 
 	.container-nav{
+		width: 100%;
 		flex-direction: column;
+	}
+
+	.site-title{
+		text-align: center;
+		align-self: center;
+	}
+
+	.container-grid
+	{
+		flex-direction: column;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.menu{
+		margin: 0 auto;
+		width: 100%;
 	}
 
 }
