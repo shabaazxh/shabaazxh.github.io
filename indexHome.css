@@ -152,7 +152,7 @@ section{
 	position: relative;
 	width:  100vw;
 	max-width: 100%;
-	min-height: 50rem;
+	min-height: 20rem;
 	padding:  0;
 	display: flex;
 	align-items: flex-end;
@@ -239,7 +239,7 @@ section{
 .container-menu{
 	width: 100%;
 	/*border: 2px solid magenta;*/
-	margin: 6em 0em;
+	margin: 2em 0em;
 	padding: 0 1em;
 	display: flex;
 	justify-content: space-around;	
@@ -539,6 +539,7 @@ section{
 	}
 }
 
+/*
 @media (min-width: 1500px)
 {
 	.container-menu {
@@ -548,12 +549,12 @@ section{
 	  display: flex;
 	  justify-content: space-around;
 	  position: absolute; /* Add this line */
-	  bottom: 0; /* Add this line */
-	  left: 50%; /* Add this line */
-	  transform: translateX(-50%); /* Add this line */
-	}
-}
+	  //bottom: 0; /* Add this line */
+	  //left: 50%; /* Add this line */
+	  //transform: translateX(-50%); /* Add this line */
+	//}
+//}
 
-
+*/
 
 
